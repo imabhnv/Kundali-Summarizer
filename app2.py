@@ -1,10 +1,9 @@
-
 import streamlit as st
 from app import getInfo
 
 st.set_page_config(page_title="Jyotish AI", layout="centered")
 
-st.title("🧠 Jyotish AI - Kundali Analyzer")
+st.title("🧠 Jyotishi : Kundali Summarizer")
 st.markdown("**Enter birth details to generate Kundali charts and analysis.**")
 
 with st.form("kundali_form"):
@@ -32,25 +31,54 @@ if submitted:
             data = getInfo(name, gender, hr, min, sec, day, month, year, place)
             st.success("✅ Kundali Analysis Complete!")
 
-            for key, title in {
-                "birth_chart": "🌌 Birth Chart",
-                "mangaldosh_chart": "🌀 Mangal Dosh",
-                "kalsapradosh_chart": "🐍 KalSarpDosh Chart",
-                "ascendant_chart": "🪔 Your Ascendant",
-                "dasha_chart": "〰️ Dasha Chart",
-                "career_chart": "💨 Your career",
-                "today_chart": "🤨 Today's Horoscope",
-                "numerology_chart": "🔢 Numerology Analysis"
-            }.items():
-                if data.get(key):
-                    st.subheader(title)
-                    st.image(data[key], caption=title)
+            st.subheader("Kundli Charts")
+            st.image(data["birth_chart"], caption="🌌 Birth Chart")
+            
+            st.subheader("Mangal Dosh")
+            st.image(data["mangaldosh_chart"], caption="🌀 Mangal Dosh")
+            
+            st.subheader("Kalsarp Dosh")
+            st.image(data["kalsapradosh_chart"], caption="🐍 KalSarpDosh Chart")
+            
+            st.subheader("Your Ascendant")
+            st.image(data["ascendant_chart"], caption="🪔 Your Ascendant")
+             
+            st.subheader("Dasha Analysis")
+            st.image(data["dasha_chart"], caption="〰️ Dasha Chart")
+            
+            st.subheader("Your Finance, Career and Occupation")
+            st.image(data["career_chart"], caption="💨 Your career")
+            
+            st.subheader("Today's Horoscope")
+            st.image(data["today_chart"], caption="🤨 Today's Horoscope")
+            
+            st.subheader("At last your Numerology analysis")
+            st.image(data["numerology_chart"], caption="🤨 Numerology Analysis")
         except Exception as e:
             st.error(f"❌ Error: {e}")
-
+            
+st.write(" ")
 st.markdown("---")
-st.markdown(
-    "<div style='text-align:center; color:gray;'>🚀 Powered by JyotishAI | Developed by Abhinav ⚡</div>",
-    unsafe_allow_html=True
-)
 
+footer = """
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #0e1117;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    opacity: 0.85;
+    z-index: 100;
+}
+</style>
+<div class="footer">
+    🚀 Powered by Coding 😎 | Sponsored by Nothing 😔 |Developed with ♥️ by Abhinav ⚡
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
