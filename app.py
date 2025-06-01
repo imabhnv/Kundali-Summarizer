@@ -1,3 +1,4 @@
+#Make sure to update the image paths according to your local directory. I'm sure you'll take care of this! 😌
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
