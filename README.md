@@ -1,7 +1,8 @@
 
 # 🔮 Jyotishi -A Kundali Chart Generator & Summarizer
 
-🚀 **Jyotishi** is a Streamlit-based web app that automates the generation of Kundali (birth chart) visuals from [AstroSage.com](https://www.astrosage.com/) using Selenium and Python. It captures key astrological charts and presents them through a user-friendly interface. The primary goal is to help users access all the essential charts and insights needed for astrological analysis.
+- 🚀 **Jyotishi** is a Streamlit-based web app that automates the generation of Kundali (birth chart) visuals from [AstroSage.com](https://www.astrosage.com/) using Selenium and Python. It captures key astrological charts and presents them through a user-friendly interface. The primary goal is to help users access all the essential charts and insights needed for astrological analysis.
+- 🔴App Demo: (https://drive.google.com/file/d/1kNf4TbPiH9hdp7DGzivU4rY3Hg5zHjyn/view?usp=drive_link)
 
 ---
 
